@@ -1,13 +1,23 @@
-body {
-  overflow: hidden; /*hide scroll bar*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* padding and border will be included in width and height*/
 }
 
-#canvas1 {
+canvas {
   position: absolute;
-  border: 2px solid black;
-  background: pink;
+  background: black;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+input {
+  position: absolute;
+  width: calc(100% - 40px); /* minus margin*/
+  padding: 10px;
+  margin: 20px;
+  z-index: 100;
 }
