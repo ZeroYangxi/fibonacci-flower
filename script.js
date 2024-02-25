@@ -19,9 +19,9 @@ let size = 10 * Math.random();
 // color: let hue = 0;
 
 function drawFlower() {
-  // angle用于确定每个花瓣的位置，
+  // angle用于确定每个花瓣的位置，即花的样式
   // 使得花瓣围绕中心点螺旋式地放置。
-  let angle = num * Math.random();
+  let angle = num * 9;
 
   //radius: 花瓣到中心点的距离
   let radius = scale * num; // a slowly increasing number Math.sqrt(num)
@@ -34,7 +34,7 @@ function drawFlower() {
   context.fillStyle = "white";
   // generate rainbow hue if you want
   // context.fillStyle = `hsl(${hue}, 50%, 100%)`;
-  context.lineWidth = 1;
+  context.lineWidth = 3;
   context.beginPath();
 
   // arc 方法用于在画布上绘制圆弧，即花瓣。
