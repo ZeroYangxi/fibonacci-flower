@@ -12,19 +12,19 @@ context.globalCompositeOperation = "destination-over";
 // 它在每次函数调用时递增，导致随着时间的推移，花朵图案的扩张。
 let num = 0;
 // scale 花朵整体的大小
-let scale = 10 * Math.random();
+let scale = 3 * Math.random();
 // size 单片花瓣的大小
-let size = 10 * Math.random();
+let size = 16 * Math.random();
 
 // color: let hue = 0;
 
 function drawFlower() {
   // angle用于确定每个花瓣的位置，即花的样式
   // 使得花瓣围绕中心点螺旋式地放置。
-  let angle = num * 8;
+  let angle = num * 16;
 
   //radius: 花瓣到中心点的距离
-  let radius = scale * num; // a slowly increasing number Math.sqrt(num)
+  let radius = scale * num; // a slowly increasing number
 
   let positionX = radius * Math.sin(angle) + canvas.width / 2;
   // sin fluctuates between 1 and -1
@@ -34,7 +34,7 @@ function drawFlower() {
   context.fillStyle = "white";
   // generate rainbow hue if you want
   // context.fillStyle = `hsl(${hue}, 50%, 100%)`;
-  context.lineWidth = 6 * Math.random();
+  context.lineWidth = 2 * Math.random();
   context.beginPath();
 
   // arc 方法用于在画布上绘制圆弧，即花瓣。
@@ -44,7 +44,7 @@ function drawFlower() {
   context.stroke();
 
   num++;
-  size += 0.5;
+  size++;
   // size++;
 }
 
@@ -53,7 +53,7 @@ function animate() {
   // clear the canvas (previous frame)
   // context.clearRect(0, 0, canvas.width, canvas.height);
   drawFlower();
-  if (num > 100) return null;
+  if (num > 10000 * Math.random()) return null;
   requestAnimationFrame(animate);
 }
 
