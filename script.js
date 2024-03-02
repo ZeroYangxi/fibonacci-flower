@@ -1,3 +1,10 @@
+/* Button */
+const refreshButton = document.getElementById("refresh");
+refreshButton.addEventListener("click", function () {
+  location.reload();
+});
+
+/* Canvas */
 const canvas = document.getElementById("canvas1");
 // we use canvas api (2D) for this project; we can also use 'webgL' for 3D.
 const context = canvas.getContext("2d");
@@ -19,8 +26,7 @@ let size = 16 * Math.random();
 // color: let hue = 0;
 
 function drawFlower() {
-  // angle用于确定每个花瓣的位置，即花的样式
-  // 使得花瓣围绕中心点螺旋式地放置。
+  // angle用于确定每个花瓣的位置，即花的样式，使花瓣围绕中心点螺旋式地放置。
   let angle = num * 16;
 
   //radius: 花瓣到中心点的距离
